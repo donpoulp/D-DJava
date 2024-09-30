@@ -1,23 +1,19 @@
-package Equipement.Shields;
+package Equipement.Shields.BasicShields;
+
+import Equipement.Shields.Shield;
 
 public class WoodenShield extends Shield {
-    int defenseBonus;
-    int lvl;
 
     /// constructor ///
-    public WoodenShield(String name) {
-        super(name, "Bouclier en bois");
+    public WoodenShield() {
+        super("WoodenShield", "Shield");
         this.defenseBonus = 5;
         this.lvl = 1;
     }
 
     /// getters ///
-    public int getDefenseBonus() {return defenseBonus;}
-    public int getLvl() {return lvl;}
 
     /// setters ///
-    public void setDefenseBonus(int defenseBonus) {this.defenseBonus = defenseBonus;}
-    public void setLvl(int lvl) {this.lvl = lvl;}
 
     /// tostring ///
     @Override

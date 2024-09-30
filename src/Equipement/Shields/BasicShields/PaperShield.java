@@ -1,23 +1,20 @@
-package Equipement.Shields;
+package Equipement.Shields.BasicShields;
+
+import Equipement.Shields.Shield;
+import GameRule.Board.Case;
 
 public class PaperShield extends Shield {
-    int defenseBonus;
-    int lvl;
 
     /// constructor ///
-    public PaperShield(String name) {
-        super(name, "PaperShield");
+    public PaperShield() {
+        super("PaperShield", "Shield");
         this.defenseBonus = 5;
         this.lvl = 1;
     }
 
     /// getters ///
-    public int getDefenseBonus() {return defenseBonus;}
-    public int getLvl() {return lvl;}
 
     /// setters ///
-    public void setDefenseBonus(int defenseBonus) {this.defenseBonus = defenseBonus;}
-    public void setLvl(int lvl) {this.lvl = lvl;}
 
     /// tostring ///
     @Override

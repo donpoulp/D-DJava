@@ -1,22 +1,20 @@
-package Character;
+package Personnage;
 
-import Equipement.Philters.HealPotion;
-import Equipement.Philters.MagicShield;
+import Equipement.Philters.BasicPhilters.HealPotion;
+import Equipement.Philters.BasicPhilters.MedicinalHerb;
 import Equipement.Philters.Philter;
-import Equipement.Spells.Fireball;
-import Equipement.Spells.IceBold;
+import Equipement.Spells.BasicSpells.Fireball;
+import Equipement.Spells.BasicSpells.IceBold;
 import Equipement.Spells.Spell;
 
-public class Wizard extends Character {
+public class Wizard extends Personnage {
 
-    int health;
-    int attackForce;
     Spell spell;
     Philter philter;
 
     /// constructeur ///
     public Wizard(String name,String SpellChoice, String PhilterChoice){
-        super(name);
+        super(name, "Wizard");
         this.health = 1;
         this.attackForce = 20;
         this.spell = SelectSpell(SpellChoice);
@@ -24,14 +22,10 @@ public class Wizard extends Character {
     }
 
     /// getter ///
-    public int getHealth(){return this.health;}
-    public int getAttackForce(){return this.attackForce;}
     public Spell getSpell(){return this.spell;}
     public Philter getPhilter(){return this.philter;}
 
     /// setter ///
-    public void setHealth(int health){this.health = 1;}
-    public void setAttackForce(int attackForce){this.attackForce = 20;}
     public void setSpell(Spell spell){this.spell = spell;}
     public void setPhilter(Philter philter){this.philter = philter;}
 
@@ -48,18 +42,18 @@ public class Wizard extends Character {
 
     public Spell SelectSpell(String inputUser){
         if (inputUser.equals("1")){
-            return this.spell = new Fireball("boule qui brule");
+            return this.spell = new Fireball();
         }if (inputUser.equals("2")){
-            return this.spell = new IceBold("boule qui fait froid");
+            return this.spell = new IceBold();
         }
         return null;
     }
 
     public Philter SelectPhilter(String inputUser){
         if (inputUser.equals("1")){
-            return this.philter = new HealPotion("Potion de vie");
+            return this.philter = new HealPotion();
         }if (inputUser.equals("2")){
-            return this.philter = new MagicShield("Bouclier magic");
+            return this.philter = new MedicinalHerb();
         }
         return null;
     }
