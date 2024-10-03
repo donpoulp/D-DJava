@@ -3,7 +3,7 @@ package Equipement;
 public abstract class DefensiveEquipement {
 
     String name;
-    String type;
+    protected String type;
 
     public DefensiveEquipement(String name, String type) {
         this.name = name;

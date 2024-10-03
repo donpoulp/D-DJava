@@ -1,14 +1,16 @@
 package Equipement.Philters.BasicPhilters;
 
 import Equipement.Philters.Philter;
+import Personnage.Inventory.Items;
 
-public class MedicinalHerb extends Philter {
+public class MedicinalHerb extends Philter implements Items {
 
     /// constructor ///
     public MedicinalHerb() {
         super("MedicinalHerb", "Philter");
         this.LifePoint = 2;
         this.lvl = 1;
+        this.emoji = Character.toString(0x1F33F);
     }
 
     /// getters ///
@@ -18,10 +20,9 @@ public class MedicinalHerb extends Philter {
     /// tostring ///
     @Override
     public String toString() {
-        return "MedicinalHerb{" +
-                ", name = " + this.getName() +
-                ", defenseBonus = " + getLifePoint() +
-                ", lvl = " + lvl +
-                '}';
+        return emoji + " Herbe medicinal : {" +
+                " PV restauré = " + LifePoint +
+                " , lvl = " + lvl +
+                " }";
     }
 }

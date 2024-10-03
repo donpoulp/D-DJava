@@ -7,9 +7,10 @@ import java.util.Comparator;
 public class Dragon extends Monster implements Case {
 
     public Dragon() {
-        super("Red Dragon", "Dragon");
-        this.attackDommage = 2;
-        this.health = 9;
+        super("Dragon", "Dragon");
+        this.attackDommage = 5;
+        this.health = 12;
+        this.emoji = Character.toString(0x1F409);
     }
 
     /// getters ///
@@ -19,9 +20,9 @@ public class Dragon extends Monster implements Case {
     /// toString ///
     @Override
     public String toString() {
-        return "Dragon{" +
-                "attackDommage=" + attackDommage +
-                ", health=" + health +
+        return emoji + " Dragon : { " +
+                " Attack = " + attackDommage +
+                " , PV = " + health +
                 '}';
     }
 }

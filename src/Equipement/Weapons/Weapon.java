@@ -3,9 +3,9 @@ package Equipement.Weapons;
 import Equipement.OffensiveEquipment;
 
 public abstract class Weapon extends OffensiveEquipment {
-    String type;
     protected int powerBonus;
     protected int lvl;
+    protected String emoji;;
 
     /// contructor ///
     public Weapon(String name, String type) {
@@ -15,6 +15,7 @@ public abstract class Weapon extends OffensiveEquipment {
     /// getters ///
     public int getPowerBonus() {return this.powerBonus;}
     public int getLvl() {return this.lvl;}
+    public String getEmoji() {return emoji;}
 
     /// setters ///
     public void setPowerBonus(int powerBonus) {this.powerBonus = powerBonus;}

@@ -4,6 +4,7 @@ import Equipement.Philters.SpecialCasePhilters.BigHealthPotion;
 import Equipement.Philters.SpecialCasePhilters.LittleHealthPotion;
 import Equipement.Shields.SpecialCaseShields.GoldShield;
 import Equipement.Shields.SpecialCaseShields.IronShield;
+import Equipement.Spells.BasicSpells.Fireball;
 import Equipement.Spells.SpecialCaseSpells.LightningStrike;
 import Equipement.Spells.SpecialCaseSpells.SupremeFireBall;
 import Equipement.Weapons.SpecialCaseWeapons.GoldSword;
@@ -34,56 +35,72 @@ public class Board implements Case {
     /// toString ///
     @Override
     public String toString() {
-        return "Board{" +
-                "board=" + this.board +
-                '}';
+        int count = 0;
+
+        StringBuilder boardString = new StringBuilder();
+        for (Case c : board) {
+            if (c instanceof Dragon){
+                boardString.append(" | ").append(count + " ").append(((Dragon) c).getEmoji() + " ").append(((Dragon) c).getName()).append(" | ");
+            }else if (c instanceof Sorcerer){
+                boardString.append(" | ").append(count + " ").append(((Sorcerer) c).getEmoji() + " ").append(((Sorcerer) c).getName()).append(" | ");
+            } else if (c instanceof Gobelin) {
+                boardString.append(" | ").append(count + " ").append(((Gobelin) c).getEmoji() + " ").append(((Gobelin) c).getName()).append(" | ");
+            }else if (c instanceof LittleHealthPotion){
+                boardString.append(" | ").append(count + " ").append(((LittleHealthPotion) c).getEmoji() + " ").append(((LittleHealthPotion) c).getName()).append(" | ");
+            }else if (c instanceof BigHealthPotion){
+                boardString.append(" | ").append(count + " ").append(((BigHealthPotion) c).getEmoji() + " ").append(((BigHealthPotion) c).getName()).append(" | ");
+            } else if (c instanceof SupremeFireBall) {
+                boardString.append(" | ").append(count + " ").append(((SupremeFireBall) c).getEmoji() + " ").append(((SupremeFireBall) c).getName()).append(" | ");
+            } else if (c instanceof LightningStrike) {
+                boardString.append(" | ").append(count + " ").append(((LightningStrike) c).getEmoji() + " ").append(((LightningStrike) c).getName()).append(" | ");
+            } else if (c instanceof GoldSword) {
+                boardString.append(" | ").append(count + " ").append(((GoldSword) c).getEmoji() + " ").append(((GoldSword) c).getName()).append(" | ");
+            } else if (c instanceof LépéeNice) {
+                boardString.append(" | ").append(count + " ").append(((LépéeNice) c).getEmoji() + " ").append(((LépéeNice) c).getName()).append(" | ");
+            } else if (c instanceof IronShield) {
+                boardString.append(" | ").append(count + " ").append(((IronShield) c).getEmoji() + " ").append(((IronShield) c).getName()).append(" | ");
+            } else if (c instanceof  GoldShield) {
+                boardString.append(" | ").append(count + " ").append(((GoldShield) c).getEmoji() + " ").append(((GoldShield) c).getName()).append(" | ");
+            } else if (c instanceof CaseEmpty) {
+                boardString.append(" | ").append(count + " ").append(c).append(" | ");
+            }
+            count++;
+        }
+        return  "         -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n" +
+                "Board : " + boardString + "\n" +
+                "         -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
     }
 
     //public int length(){return board.size();}
 
     public void placeCaseOnBoard(){
 
-        GoldSword goldSword = new GoldSword();
-        LépéeNice lépéeNice = new LépéeNice();
-
-        LightningStrike lightningStrike = new LightningStrike();
-        SupremeFireBall supremeFireBall = new SupremeFireBall();
-
-        GoldShield goldShield = new GoldShield();
-        IronShield ironShield = new IronShield();
-
-
-        BigHealthPotion bigHealthPotion = new BigHealthPotion();
-        LittleHealthPotion littleHealthPotion = new LittleHealthPotion();
-
-        Dragon dragon = new Dragon();
-        Gobelin gobelin = new Gobelin();
-        Sorcerer sorcerer = new Sorcerer();
-
-        CaseEmpty caseEmpty = new CaseEmpty();
-
-        Case[] randomTab = new Case[12];
-
-        randomTab[0] = goldSword;
-        randomTab[1] = lépéeNice;
-        randomTab[2] = lightningStrike;
-        randomTab[3] = supremeFireBall;
-        randomTab[4] = goldShield;
-        randomTab[5] = ironShield;
-        randomTab[6] = bigHealthPotion;
-        randomTab[7] = littleHealthPotion;
-        randomTab[8] = dragon;
-        randomTab[9] = gobelin;
-        randomTab[10] = sorcerer;
-        randomTab[11] = caseEmpty;
-
-        int maxRange = 11;
+        int maxRange = 13;
         int minRange = 1;
         int range = maxRange - minRange + 1;
 
         for (int i = 0; i < 64; i++) {
+
+            Case[] randomTab = new Case[14];
+
+            randomTab[0] = new GoldSword();
+            randomTab[1] = new LépéeNice();
+            randomTab[2] = new LightningStrike();
+            randomTab[3] = new SupremeFireBall();
+            randomTab[4] = new GoldShield();
+            randomTab[5] = new IronShield();
+            randomTab[6] = new BigHealthPotion();
+            randomTab[7] = new LittleHealthPotion();
+            randomTab[8] = new Dragon();
+            randomTab[9] = new Gobelin();
+            randomTab[10] = new Sorcerer();
+
+            randomTab[11] = new CaseEmpty();
+            randomTab[12] = new CaseEmpty();
+            randomTab[13] = new CaseEmpty();
+
             int RandomSelect = (int)(Math.random() * range)+ minRange;
-                this.board.add(randomTab[RandomSelect]);
+                this.board.add(i, randomTab[RandomSelect]);
         }
         //System.out.println(Arrays.toString(board));
     }

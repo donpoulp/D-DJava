@@ -5,9 +5,10 @@ import GameRule.Board.Case;
 public class Gobelin extends Monster implements Case {
 
     public Gobelin() {
-        super("Little Gobelin", "Gobelin");
-        this.attackDommage = 2;
+        super("Gobelin", "Gobelin");
+        this.attackDommage = 3;
         this.health = 9;
+        this.emoji = Character.toString(0x1F479);
     }
 
     /// getters ///
@@ -17,9 +18,9 @@ public class Gobelin extends Monster implements Case {
     /// toString ///
     @Override
     public String toString() {
-        return "Gobelin{" +
-                "attackDommage=" + attackDommage +
-                ", health=" + health +
+        return emoji + " Gobelin : { " +
+                " Attack = " + attackDommage +
+                " , PV = " + health +
                 '}';
     }
 }

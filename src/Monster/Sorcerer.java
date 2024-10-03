@@ -5,9 +5,10 @@ import GameRule.Board.Case;
 public class Sorcerer extends Monster implements Case {
 
     public Sorcerer() {
-        super("Black Sorcerer", "Sorcerer");
-        this.attackDommage = 2;
-        this.health = 9;
+        super("Sorcerer", "Sorcerer");
+        this.attackDommage = 6;
+        this.health = 10;
+        this.emoji = Character.toString(0x1F9D9);
     }
 
     /// getters ///
@@ -17,9 +18,9 @@ public class Sorcerer extends Monster implements Case {
     /// toString ///
     @Override
     public String toString() {
-        return "Sorcerer{" +
-                "attackDommage=" + attackDommage +
-                ", health=" + health +
+        return emoji + " Sorcier : { " +
+                " Attack = " + attackDommage +
+                " , PV = " + health +
                 '}';
     }
 }

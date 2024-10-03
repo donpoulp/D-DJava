@@ -3,7 +3,7 @@ package Equipement;
 public abstract class OffensiveEquipment {
 
     String name;
-    String type;
+    protected String type;
 
     /// contructor ///
     public OffensiveEquipment(String name, String type) {

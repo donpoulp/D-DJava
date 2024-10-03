@@ -2,14 +2,16 @@ package Equipement.Spells.SpecialCaseSpells;
 
 import Equipement.Spells.Spell;
 import GameRule.Board.Case;
+import Personnage.Inventory.Items;
 
-public class SupremeFireBall extends Spell implements Case {
+public class SupremeFireBall extends Spell implements Case, Items {
 
     /// constructor ///
     public SupremeFireBall() {
-        super("SupremFireBall","Spell");
+        super("SupremeFireBall","Spell");
         this.powerBonus = 7;
         this.lvl = 1;
+        this.emoji = Character.toString(0x1F525);
     }
 
     /// getters ///
@@ -19,9 +21,9 @@ public class SupremeFireBall extends Spell implements Case {
     /// toString ///
     @Override
     public String toString() {
-        return "SupremeFireBall{" +
-                "powerBonus=" + powerBonus +
-                ", lvl=" + lvl +
-                '}';
+        return emoji + " Boule de feu Suprème : {" +
+                " puissance bonus = " + powerBonus +
+                " , lvl = " + lvl +
+                " }";
     }
 }

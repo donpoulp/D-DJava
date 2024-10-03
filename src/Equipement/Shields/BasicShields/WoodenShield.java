@@ -1,14 +1,16 @@
 package Equipement.Shields.BasicShields;
 
 import Equipement.Shields.Shield;
+import Personnage.Inventory.Items;
 
-public class WoodenShield extends Shield {
+public class WoodenShield extends Shield  implements Items {
 
     /// constructor ///
     public WoodenShield() {
         super("WoodenShield", "Shield");
-        this.defenseBonus = 5;
+        this.defenseBonus = 1;
         this.lvl = 1;
+        this.emoji = Character.toString(0x1FAB5);
     }
 
     /// getters ///
@@ -18,10 +20,9 @@ public class WoodenShield extends Shield {
     /// tostring ///
     @Override
     public String toString() {
-        return "WoodenShield{" +
-                ", name = " + this.getName() +
-                ", defenseBonus = " + defenseBonus +
-                ", lvl = " + lvl +
-                '}';
+        return emoji + " Bouclier en bois : {" +
+                " defenseBonus = " + defenseBonus +
+                " , lvl = " + lvl +
+                " }";
     }
 }

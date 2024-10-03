@@ -1,14 +1,16 @@
 package Equipement.Spells.BasicSpells;
 
 import Equipement.Spells.Spell;
+import Personnage.Inventory.Items;
 
-public class IceBold extends Spell {
+public class IceBold extends Spell implements Items {
 
     /// contructor ///
     public IceBold() {
         super("IceBold", "Spell");
         this.powerBonus = 2;
         this.lvl = 1;
+        this.emoji = Character.toString(0x1F9CA);
     }
     /// getters ///
 
@@ -17,10 +19,9 @@ public class IceBold extends Spell {
     /// toString ///
     @Override
     public String toString() {
-        return "IceBold{" +
-                ", name = " + this.getName() +
-                ", powerBonus = " + powerBonus +
-                ", lvl = " + lvl +
-                '}';
+        return emoji + " Boule de Glace : {" +
+                " puissance bonus = " + powerBonus +
+                " , lvl = " + lvl +
+                " }";
     }
 }

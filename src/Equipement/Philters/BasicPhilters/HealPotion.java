@@ -1,14 +1,16 @@
 package Equipement.Philters.BasicPhilters;
 
 import Equipement.Philters.Philter;
+import Personnage.Inventory.Items;
 
-public class HealPotion extends Philter {
+public class HealPotion extends Philter implements Items {
 
     /// constructor ///
     public HealPotion() {
         super("HealPotion", "Philter");
         this.LifePoint = 2;
         this.lvl = 1;
+        this.emoji = Character.toString(0x1F48A);
     }
 
     /// getters ///
@@ -18,10 +20,9 @@ public class HealPotion extends Philter {
     /// tostring ///
     @Override
     public String toString() {
-        return "HealPotion{" +
-                ", name = " + this.getName() +
-                ", defenseBonus = " + getLifePoint() +
-                ", lvl = " + lvl +
-                '}';
+        return emoji + " Potion de soins : {" +
+                " PV restauré = " + LifePoint +
+                " , lvl = " + lvl +
+                " }";
     }
 }

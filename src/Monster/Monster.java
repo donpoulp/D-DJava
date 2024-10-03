@@ -5,6 +5,7 @@ public abstract class Monster {
     String type;
     protected int attackDommage;
     protected int health;
+    protected String emoji;
     //int health;
 
     /// constructor ///
@@ -18,6 +19,7 @@ public abstract class Monster {
     public String getType() {return type;}
     public int getAttackDommage() {return attackDommage;}
     public int getHealth() {return health;}
+    public String getEmoji() {return emoji;}
     //public static int getHealth() {return health;}
 
     /// setters ///
